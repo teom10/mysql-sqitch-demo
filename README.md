@@ -11,6 +11,7 @@ docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch
 ```
 
 ## Configuration
+docs: https://github.com/sqitchers/sqitch/blob/master/lib/sqitchtutorial-mysql.pod
 
 ```bash
 docker run -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql config --user engine.mysql.client /usr/local/mysql/bin/mysql
@@ -19,5 +20,14 @@ docker run -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mys
 ```bash
 docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql config --user user.name 'Omar Teodoro Oropeza'
 ```
-
+```bash
 docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql config --user user.mail 'oteodoro@gbm.com.mx'
+```
+
+```bash
+docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql add appuser -n 'Creates a an application user.'
+```
+
+```bash
+docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql deploy db:mysql://root:123456@localhost:3306/CRM
+```
