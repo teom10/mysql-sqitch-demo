@@ -7,6 +7,17 @@ ENTRYPOINT bash
 
 ## Initialize
 ```bash
-docker run -it -v ~/Projects/mysql-sqitch-demo/src:/src docteurklein/sqitch:mysql init --uri https://github.com/teom10/mysql-sqitch-demo.git demo-mysql
+docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql init demo-mysql --uri https://github.com/teom10/mysql-sqitch-demo.git --engine mysql
 ```
 
+## Configuration
+
+```bash
+docker run -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql config --user engine.mysql.client /usr/local/mysql/bin/mysql
+```
+
+```bash
+docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql config --user user.name 'Omar Teodoro Oropeza'
+```
+
+docker run -it -v ~/Projects/mysql-sqitch-demo/database:/src docteurklein/sqitch:mysql config --user user.mail 'oteodoro@gbm.com.mx'
