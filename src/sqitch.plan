@@ -1,0 +1,4 @@
+%syntax-version=1.0.0
+%project=demo-mysql
+%uri=https://github.com/teom10/mysql-sqitch-demo.git
+
